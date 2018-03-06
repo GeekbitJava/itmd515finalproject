@@ -85,6 +85,18 @@ public class DAO {
 
 	stmnt.executeUpdate(UserTable);
 	System.out.println("Created User Table in given database...");		
+	
+		String PayTable = "CREATE TABLE IF NOT EXISTS Payment "
+				+ "(pid int(10) NOT NULL, "
+				+ "	nameoncard varchar(40), "
+				+ "	cardnumber numeric(20), "
+				+ "	expdate date, "
+				+ "	ccv smallint(4), "
+				+ "	userid varchar(30), "
+				+ "	PRIMARY KEY( pid ))";
+	
+	stmnt.executeUpdate(PayTable);
+	System.out.println("Created Payment Table in given database...");		
 			
 		} catch (SQLException se) {
 			
@@ -241,4 +253,49 @@ public class DAO {
 	}// end finally try
 		
 	}	
+	
+	public void insertPayment(Payment[] PayList) {
+		
+		String PayTbl = null;
+		
+		try{
+		  //Open connection to the PAPA server
+	      System.out.println("Connecting to test server to insert");
+	      dbcon = DriverManager.getConnection(URL, UID, PASSWD);
+	      System.out.println("Connection to test server successful.");
+	      
+	      //create statment
+	      System.out.println("Inserting records into the table...");
+	      stmnt = dbcon.createStatement();
+	      
+	      //cycles through the taxi transactions objects and stores them
+	      for(int i=0;i<PayList.length;i++) {
+	    	  PayTbl = "INSERT INTO Payment(pid, nameoncard, cardnumber, expdate, ccv, userid)" +
+	      " VALUES('"+PayList[i].getPid()+"' , '"+PayList[i].getNameOnCard()+"' , '"+PayList[i].getCardNumber()+"' , '"+PayList[i].getExpDate()+
+	      "' , '"+PayList[i].getCCV()+"' , '"+PayList[i].getUserid()+"')";
+
+	      stmnt.executeUpdate(PayTbl); //run query to insert record by record
+	     
+	      }
+
+	      System.out.println("Payments added to DB");
+
+	   }catch(SQLException se){
+		   
+		// Handle errors for JDBC
+		se.printStackTrace();
+		
+	  }finally {
+		  
+		// finally block used to close resources
+		try {
+			
+			if (stmnt != null)
+				dbcon.close();
+			
+		} catch (SQLException se) {  } // catch does nothing
+	}// end finally try
+		
+	}	
+	
 }//end of class DAO

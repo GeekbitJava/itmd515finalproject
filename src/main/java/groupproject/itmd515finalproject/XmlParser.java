@@ -42,6 +42,10 @@ public class XmlParser {
 	private Users [] UsrArray;
 	private ArrayList<Users> UsrList = new ArrayList<Users>();
 	
+	//Payment
+	private Payment [] PayArray;
+	private ArrayList<Payment> PayList = new ArrayList<Payment>();
+	
 	//method to parse through the delivery transactions xml
 	public void parseDTXML() {
 		
@@ -219,4 +223,58 @@ public class XmlParser {
 	public void setUsrArray(Users[] UsrArray) {
 		this.UsrArray = UsrArray;
 	}
+
+	public void parsePaymentXML() {
+		
+		try {
+
+			
+			//NOTE: IN FINAL DEV --> REMOVE HARD CODING OF FILE LOCATION
+			File fXmlFile = new File("C:\\Users\\Tom\\Documents\\IIT\\ITMD415\\Assignments\\proj_Assign_1\\itmd515finalproject\\payment.xml");
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(fXmlFile);
+
+			doc.getDocumentElement().normalize();
+
+			NodeList nList = doc.getElementsByTagName("paymentinfo");
+
+			System.out.println("----------------------------");
+			System.out.println("Reading Payments from XML");
+
+			for (int index = 0; index < nList.getLength(); index++) {
+
+				//node list
+				Node nNode = nList.item(index);
+
+				PayList.add(new Payment());
+				
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+
+					Element eElement = (Element) nNode;
+
+					//fill out the deliveryTransactions obj
+					PayList.get(index).setNameOnCard(eElement.getElementsByTagName("name_on_card").item(0).getTextContent());;
+					PayList.get(index).setCardNumber(Long.parseLong(eElement.getElementsByTagName("card_number").item(0).getTextContent()));;
+					PayList.get(index).setExpDate(java.sql.Date.valueOf(eElement.getElementsByTagName("exp_date").item(0).getTextContent()));;
+					PayList.get(index).setCCV(Short.parseShort(eElement.getElementsByTagName("ccv").item(0).getTextContent()));;
+					PayList.get(index).setUserid(eElement.getElementsByTagName("user_id").item(0).getTextContent());;
+					PayList.get(index).setPid(Integer.parseInt(eElement.getElementsByTagName("pid").item(0).getTextContent()));
+
+				}
+			}
+			PayArray = PayList.toArray(new Payment[PayList.size()]);
+		    
+		} catch (Exception e) {
+			e.printStackTrace();
+		    }		
+	}	
+	
+	public Payment[] getPayArray() {
+		return PayArray;
+	}
+
+	public void setPayArray(Payment[] PayArray) {
+		this.PayArray = PayArray;
+	}	
 }

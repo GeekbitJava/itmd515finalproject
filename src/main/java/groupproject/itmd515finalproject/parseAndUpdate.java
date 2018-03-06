@@ -28,6 +28,9 @@ public class parseAndUpdate {
 		parse.parseUserXML();
 		daoO.insertUsers(parse.getUsrArray());
 		
+		parse.parsePaymentXML();
+		daoO.insertPayment(parse.getPayArray());
+		
 		
 	}
 

@@ -28,8 +28,9 @@ public class Payment {
 	 * ---------------	
 	 */
 		
+		private int pid;
 		private String name_on_card;
-		private int card_number;
+		private long card_number;
 		private Date exp_date;
 		private short ccv;
 		private String user_id;
@@ -54,13 +55,13 @@ public class Payment {
 		/**
 		 * @return the card_number
 		 */
-		public int getCardNumber() {
+		public long getCardNumber() {
 			return card_number;
 		}
 		/**
 		 * @param card_number the card_number to set
 		 */
-		public void setCardNumber(int card_number) {
+		public void setCardNumber(long card_number) {
 			this.card_number = card_number;
 		}
 		/**
@@ -100,5 +101,16 @@ public class Payment {
 			this.user_id = user_id;
 		}
 			
-
+		public int getPid() {
+			return pid;
+		}
+		/**
+		 * @param card_number the card_number to set
+		 */
+		public void setPid(int pid) {
+			this.pid = pid;
+		}
+		/**
+		 * @return the exp_date
+		 */
 }
