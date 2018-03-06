@@ -26,11 +26,17 @@ public class XmlParser {
 	 * | ATTRIBUTES  |
 	 * ---------------	
 	 */
-	//lists that will hold all of the entity information to be passed via jdbc to sql
 		
-	//DeliveryTransactions dtarray[] = new DeliveryTransactions[600]; //array of delivery Transactions
+	//lists and arrays that will hold all of the entity information to be passed via jdbc to sql
+		//PURPOSE: lists allow for dynamic memory allocation, arrays are more easily passed to be stored.
+		
+	//Delivery Transactions
 	private DeliveryTransactions [] dtArray;
 	private ArrayList<DeliveryTransactions> dtList = new ArrayList<DeliveryTransactions>();
+	
+	//Delivery Transactions
+	private TaxiTransactions [] taxArray;
+	private ArrayList<TaxiTransactions> taxList = new ArrayList<TaxiTransactions>();
 	
 	//method to parse through the delivery transactions xml
 	public void parseDTXML() {
