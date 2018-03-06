@@ -15,13 +15,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DAO {
+		// set up a  database URL String var
 	
 	// set up a  database URL String var
-	static final String URL = "jdbc:33.33.33.1";
+	static final String URL = "jdbc:mysql://localhost:3306/sys?autoReconnect=true&useSSL=false";
 	
 	// set up credential strings
 		static final String UID = "root";
-		static final String PASSWD = "root";
+		static final String PASSWD = "QW!@12odin";
 	
 	//database object definition
 	Connection dbcon = null;
@@ -31,9 +32,10 @@ public class DAO {
 	// method to create our tablea
 	public void createTables() {
 		try {
-			
+
+
 			//connect to the db
-			dbcon = DriverManager.getConnection(URL, UID, PASSWD);
+		      dbcon = DriverManager.getConnection(URL, UID, PASSWD);
 
 			//statement for connection
 			stmnt = dbcon.createStatement();
@@ -76,7 +78,7 @@ public class DAO {
 		
 	}//end of createTable()
 
-	public void insertDtRecords(DeliveryTransactions [] dtList) {
+	public void insertDtRecords(DeliveryTransactions[] dtList) {
 
 		String dtTbl = null;
 		
@@ -91,7 +93,7 @@ public class DAO {
 	      stmnt = dbcon.createStatement();
 	      
 	   
-	      
+	      System.out.println(dtList.length);
 	      //cycles through the delivery transactions objects and stores them
 	      for(int i=0;i<dtList.length;i++) {
 	    	  dtTbl = "INSERT INTO DeliveryTransactions(tid, userid, driverid, dateOfSale, rate, pickuptime, pickuplocation, dropofftime, dropofflocation, packagesize)" +

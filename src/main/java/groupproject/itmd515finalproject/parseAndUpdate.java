@@ -19,10 +19,11 @@ public class parseAndUpdate {
 		
 		parse.parseDTXML();
 		
-		//DAO daoO = new DAO();
+		DAO daoO = new DAO();
 		
-		//daoO.createTables();
+		daoO.createTables();
 
+		daoO.insertDtRecords(parse.dtArray);
 		
 		
 	}
