@@ -7,12 +7,6 @@ Deborah Barndt
 	This is a class entity to hold Drivers
 */
 
-
-import java.sql.Date;
-import java.sql.Time;
-
-
-
 public class Drivers {
 
 	/* ---------------
@@ -68,7 +62,7 @@ public class Drivers {
 		/**
 		 * @return the license
 		 */
-		public Date getLicense() {
+		public String getLicense() {
 			return license;
 		}
 		/**
