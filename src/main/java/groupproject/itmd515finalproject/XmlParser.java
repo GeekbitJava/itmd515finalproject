@@ -29,8 +29,8 @@ public class XmlParser {
 	//lists that will hold all of the entity information to be passed via jdbc to sql
 		
 	//DeliveryTransactions dtarray[] = new DeliveryTransactions[600]; //array of delivery Transactions
-	DeliveryTransactions [] dtArray;
-	ArrayList<DeliveryTransactions> dtList = new ArrayList<DeliveryTransactions>();
+	private DeliveryTransactions [] dtArray;
+	private ArrayList<DeliveryTransactions> dtList = new ArrayList<DeliveryTransactions>();
 	
 	//method to parse through the delivery transactions xml
 	public void parseDTXML() {
@@ -86,4 +86,16 @@ public class XmlParser {
 		    }
 		  }
 
+	
+	
+	public DeliveryTransactions[] getDtArray() {
+		return dtArray;
+	}
+
+	public void setDtArray(DeliveryTransactions[] dtArray) {
+		this.dtArray = dtArray;
+	}
+
+	
+	
 }

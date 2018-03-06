@@ -23,7 +23,7 @@ public class parseAndUpdate {
 		
 		daoO.createTables();
 
-		daoO.insertDtRecords(parse.dtArray);
+		daoO.insertDtRecords(parse.getDtArray());
 		
 		
 	}
