@@ -71,6 +71,20 @@ public class DAO {
 
 	stmnt.executeUpdate(taxTable);
 	System.out.println("Created taxTable in given database...");			
+	
+		String UserTable = "CREATE TABLE IF NOT EXISTS Users "
+				+ "(userid varchar(10) NOT NULL, "
+				+ "	password varchar(20), "
+				+ "	firstname varchar(20), "
+				+ "	lastname varchar(20), "
+				+ "	usertype varchar(10), "
+				+ "	email varchar(30), "
+				+ "	curr_loc varchar(255), "
+				+ "	rating tinyint(1), "
+				+ "	PRIMARY KEY( userid ))";
+
+	stmnt.executeUpdate(UserTable);
+	System.out.println("Created User Table in given database...");		
 			
 		} catch (SQLException se) {
 			
@@ -183,4 +197,48 @@ public class DAO {
 	}// end finally try
 		
 	}
+	
+	public void insertUsers(Users[] UsrList) {
+		
+		String UsrTbl = null;
+		
+		try{
+		  //Open connection to the PAPA server
+	      System.out.println("Connecting to test server to insert");
+	      dbcon = DriverManager.getConnection(URL, UID, PASSWD);
+	      System.out.println("Connection to test server successful.");
+	      
+	      //create statment
+	      System.out.println("Inserting records into the table...");
+	      stmnt = dbcon.createStatement();
+	      
+	      //cycles through the taxi transactions objects and stores them
+	      for(int i=0;i<UsrList.length;i++) {
+	    	  UsrTbl = "INSERT INTO Users(userid, password, firstname, lastname, usertype, email, curr_loc, rating)" +
+	      " VALUES('"+UsrList[i].getUserid()+"' , '"+UsrList[i].getPassword()+"' , '"+UsrList[i].getFirstName()+"' , '"+UsrList[i].getLastName()+
+	      "' , '"+UsrList[i].getUserType()+"' , '"+UsrList[i].getEmail()+"' , '"+UsrList[i].getCurr_Loc()+"' , '"+UsrList[i].getRating()+"')";
+
+	      stmnt.executeUpdate(UsrTbl); //run query to insert record by record
+	     
+	      }
+
+	      System.out.println("Users added to DB");
+
+	   }catch(SQLException se){
+		   
+		// Handle errors for JDBC
+		se.printStackTrace();
+		
+	  }finally {
+		  
+		// finally block used to close resources
+		try {
+			
+			if (stmnt != null)
+				dbcon.close();
+			
+		} catch (SQLException se) {  } // catch does nothing
+	}// end finally try
+		
+	}	
 }//end of class DAO

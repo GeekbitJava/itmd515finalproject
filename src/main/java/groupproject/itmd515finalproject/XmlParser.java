@@ -38,6 +38,10 @@ public class XmlParser {
 	private TaxiTransactions [] taxArray;
 	private ArrayList<TaxiTransactions> taxList = new ArrayList<TaxiTransactions>();
 	
+	//Users
+	private Users [] UsrArray;
+	private ArrayList<Users> UsrList = new ArrayList<Users>();
+	
 	//method to parse through the delivery transactions xml
 	public void parseDTXML() {
 		
@@ -158,5 +162,61 @@ public class XmlParser {
 
 	public void setTaxArray(TaxiTransactions[] taxArray) {
 		this.taxArray = taxArray;
+	}
+	
+	public void parseUserXML() {
+		
+		try {
+
+			
+			//NOTE: IN FINAL DEV --> REMOVE HARD CODING OF FILE LOCATION
+			File fXmlFile = new File("C:\\Users\\Tom\\Documents\\IIT\\ITMD415\\Assignments\\proj_Assign_1\\itmd515finalproject\\users.xml");
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(fXmlFile);
+
+			doc.getDocumentElement().normalize();
+
+			NodeList nList = doc.getElementsByTagName("user");
+
+			System.out.println("----------------------------");
+			System.out.println("Reading Users from XML");
+
+			for (int index = 0; index < nList.getLength(); index++) {
+
+				//node list
+				Node nNode = nList.item(index);
+
+				UsrList.add(new Users());
+				
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+
+					Element eElement = (Element) nNode;
+
+					//fill out the deliveryTransactions obj
+					UsrList.get(index).setUserid(eElement.getElementsByTagName("user_id").item(0).getTextContent());;
+					UsrList.get(index).setPassword(eElement.getElementsByTagName("password").item(0).getTextContent());;
+					UsrList.get(index).setFirstName(eElement.getElementsByTagName("first_name").item(0).getTextContent());;
+					UsrList.get(index).setLastName(eElement.getElementsByTagName("last_name").item(0).getTextContent());;
+					UsrList.get(index).setUserType(eElement.getElementsByTagName("user_type").item(0).getTextContent());;
+					UsrList.get(index).setRating(Byte.valueOf(eElement.getElementsByTagName("rating").item(0).getTextContent()));;
+					UsrList.get(index).setEmail(eElement.getElementsByTagName("email").item(0).getTextContent());;
+					UsrList.get(index).setCurr_Loc(eElement.getElementsByTagName("current_loc").item(0).getTextContent());;
+
+				}
+			}
+			UsrArray = UsrList.toArray(new Users[UsrList.size()]);
+		    
+		} catch (Exception e) {
+			e.printStackTrace();
+		    }		
+	}	
+	
+	public Users[] getUsrArray() {
+		return UsrArray;
+	}
+
+	public void setUsrArray(Users[] UsrArray) {
+		this.UsrArray = UsrArray;
 	}
 }
