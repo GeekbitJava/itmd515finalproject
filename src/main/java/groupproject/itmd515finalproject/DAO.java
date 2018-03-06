@@ -97,6 +97,18 @@ public class DAO {
 	
 	stmnt.executeUpdate(PayTable);
 	System.out.println("Created Payment Table in given database...");		
+	
+	String VTable = "CREATE TABLE IF NOT EXISTS Vehicles"
+			+ "(vehicle_id int(10) NOT NULL, "
+			+ "	make varchar(20), "
+			+ "	model varchar(20), "
+			+ "	year int(5), "
+			+ "	licenseplate varchar(20), "
+			+ "	color varchar(20), "
+			+ "	PRIMARY KEY( vehicle_id ))";
+
+stmnt.executeUpdate(VTable);
+System.out.println("Created Vehicle Table in given database...");	
 			
 		} catch (SQLException se) {
 			
@@ -297,5 +309,50 @@ public class DAO {
 	}// end finally try
 		
 	}	
+
+	
+	public void insertVehicles(Vehicles[] VList) {
+		
+		String VTbl = null;
+		
+		try{
+		  //Open connection to the PAPA server
+	      System.out.println("Connecting to test server to insert");
+	      dbcon = DriverManager.getConnection(URL, UID, PASSWD);
+	      System.out.println("Connection to test server successful.");
+	      
+	      //create statment
+	      System.out.println("Inserting records into the table...");
+	      stmnt = dbcon.createStatement();
+	      
+	      //cycles through the taxi transactions objects and stores them
+	      for(int i=0;i<VList.length;i++) {
+	    	  VTbl = "INSERT INTO Vehicles(vehicle_id, make, model, year, licenseplate, color)" +
+	      " VALUES('"+VList[i].getVehicleId()+"' , '"+VList[i].getMake()+"' , '"+VList[i].getModel()+"' , '"+VList[i].getYear()+
+	      "' , '"+VList[i].getLicensePlate()+"' , '"+VList[i].getColor()+"')";
+
+	      stmnt.executeUpdate(VTbl); //run query to insert record by record
+	     
+	      }
+
+	      System.out.println("Vehicles added to DB");
+
+	   }catch(SQLException se){
+		   
+		// Handle errors for JDBC
+		se.printStackTrace();
+		
+	  }finally {
+		  
+		// finally block used to close resources
+		try {
+			
+			if (stmnt != null)
+				dbcon.close();
+			
+		} catch (SQLException se) {  } // catch does nothing
+	}// end finally try
+		
+	}		
 	
 }//end of class DAO

@@ -1,4 +1,7 @@
+package groupproject.itmd515finalproject;
+
 /*
+
 Deborah Barndt
 	 Thomas Boller
 	 2-23-18
@@ -6,12 +9,6 @@ Deborah Barndt
 	 Project Assignment 1
 	This is a class entity to hold Vehicles
 */
-
-
-import java.sql.Date;
-import java.sql.Time;
-
-
 
 public class Vehicles {
 

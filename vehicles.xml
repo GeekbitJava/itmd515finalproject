@@ -20,4 +20,22 @@
 		<color>red</color>
 	</vehicle>
 
+	<vehicle>
+		<vehicle_id>1102</vehicle_id>
+		<make>Acura</make>
+		<model>cl</model>
+		<year>1997</year>
+		<license_plate>somenumber</license_plate>
+		<color>black</color>
+	</vehicle>
+	
+		<vehicle>
+		<vehicle_id>1103</vehicle_id>
+		<make>Pontiac</make>
+		<model>Firebird</model>
+		<year>1988</year>
+		<license_plate>anothernumber</license_plate>
+		<color>red</color>
+	</vehicle>
+	
 </vehicles>

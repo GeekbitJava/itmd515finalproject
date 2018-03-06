@@ -46,6 +46,10 @@ public class XmlParser {
 	private Payment [] PayArray;
 	private ArrayList<Payment> PayList = new ArrayList<Payment>();
 	
+	//Vehicles
+	private Vehicles [] VArray;
+	private ArrayList<Vehicles> VList = new ArrayList<Vehicles>();
+	
 	//method to parse through the delivery transactions xml
 	public void parseDTXML() {
 		
@@ -277,4 +281,58 @@ public class XmlParser {
 	public void setPayArray(Payment[] PayArray) {
 		this.PayArray = PayArray;
 	}	
+	
+	public void parseVehiclesXML() {
+		
+		try {
+
+			
+			//NOTE: IN FINAL DEV --> REMOVE HARD CODING OF FILE LOCATION
+			File fXmlFile = new File("C:\\Users\\Tom\\Documents\\IIT\\ITMD415\\Assignments\\proj_Assign_1\\itmd515finalproject\\vehicles.xml");
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(fXmlFile);
+
+			doc.getDocumentElement().normalize();
+
+			NodeList nList = doc.getElementsByTagName("vehicle");
+
+			System.out.println("----------------------------");
+			System.out.println("Reading Vehicles from XML");
+
+			for (int index = 0; index < nList.getLength(); index++) {
+
+				//node list
+				Node nNode = nList.item(index);
+
+				VList.add(new Vehicles());
+				
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+
+					Element eElement = (Element) nNode;
+
+					//fill out the deliveryTransactions obj
+					VList.get(index).setVehicleId(Integer.parseInt(eElement.getElementsByTagName("vehicle_id").item(0).getTextContent()));;
+					VList.get(index).setMake(eElement.getElementsByTagName("make").item(0).getTextContent());;
+					VList.get(index).setModel(eElement.getElementsByTagName("model").item(0).getTextContent());;
+					VList.get(index).setYear(Integer.parseInt(eElement.getElementsByTagName("year").item(0).getTextContent()));;
+					VList.get(index).setLicensePlate(eElement.getElementsByTagName("license_plate").item(0).getTextContent());;
+					VList.get(index).setColor(eElement.getElementsByTagName("color").item(0).getTextContent());;
+
+				}
+			}
+			VArray = VList.toArray(new Vehicles[VList.size()]);
+		    
+		} catch (Exception e) {
+			e.printStackTrace();
+		    }		
+	}	
+	
+	public Vehicles[] getVArray() {
+		return VArray;
+	}
+
+	public void setVArray(Vehicles[] VArray) {
+		this.VArray = VArray;
+	}		
 }

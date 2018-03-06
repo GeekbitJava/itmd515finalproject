@@ -31,6 +31,9 @@ public class parseAndUpdate {
 		parse.parsePaymentXML();
 		daoO.insertPayment(parse.getPayArray());
 		
+		parse.parseVehiclesXML();
+		daoO.insertVehicles(parse.getVArray());
+		
 		
 	}
 
