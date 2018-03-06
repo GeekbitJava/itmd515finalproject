@@ -50,6 +50,10 @@ public class XmlParser {
 	private Vehicles [] VArray;
 	private ArrayList<Vehicles> VList = new ArrayList<Vehicles>();
 	
+	//Drivers
+	private Drivers [] DriverArray;
+	private ArrayList<Drivers> DriverList = new ArrayList<Drivers>();
+	
 	//method to parse through the delivery transactions xml
 	public void parseDTXML() {
 		
@@ -57,7 +61,7 @@ public class XmlParser {
 
 			
 			//NOTE: IN FINAL DEV --> REMOVE HARD CODING OF FILE LOCATION
-			File fXmlFile = new File("C:\\Users\\Tom\\Documents\\IIT\\ITMD415\\Assignments\\proj_Assign_1\\itmd515finalproject\\deliverytrans.xml");
+			File fXmlFile = new File("deliverytrans.xml");
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(fXmlFile);
@@ -120,7 +124,7 @@ public class XmlParser {
 
 			
 			//NOTE: IN FINAL DEV --> REMOVE HARD CODING OF FILE LOCATION
-			File fXmlFile = new File("C:\\Users\\Tom\\Documents\\IIT\\ITMD415\\Assignments\\proj_Assign_1\\itmd515finalproject\\taxitrans.xml");
+			File fXmlFile = new File("taxitrans.xml");
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(fXmlFile);
@@ -178,7 +182,7 @@ public class XmlParser {
 
 			
 			//NOTE: IN FINAL DEV --> REMOVE HARD CODING OF FILE LOCATION
-			File fXmlFile = new File("C:\\Users\\Tom\\Documents\\IIT\\ITMD415\\Assignments\\proj_Assign_1\\itmd515finalproject\\users.xml");
+			File fXmlFile = new File("users.xml");
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(fXmlFile);
@@ -234,7 +238,7 @@ public class XmlParser {
 
 			
 			//NOTE: IN FINAL DEV --> REMOVE HARD CODING OF FILE LOCATION
-			File fXmlFile = new File("C:\\Users\\Tom\\Documents\\IIT\\ITMD415\\Assignments\\proj_Assign_1\\itmd515finalproject\\payment.xml");
+			File fXmlFile = new File("payment.xml");
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(fXmlFile);
@@ -288,7 +292,7 @@ public class XmlParser {
 
 			
 			//NOTE: IN FINAL DEV --> REMOVE HARD CODING OF FILE LOCATION
-			File fXmlFile = new File("C:\\Users\\Tom\\Documents\\IIT\\ITMD415\\Assignments\\proj_Assign_1\\itmd515finalproject\\vehicles.xml");
+			File fXmlFile = new File("vehicles.xml");
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse(fXmlFile);
@@ -334,5 +338,59 @@ public class XmlParser {
 
 	public void setVArray(Vehicles[] VArray) {
 		this.VArray = VArray;
+	}	
+	
+	public void parseDriversXML() {
+		
+		try {
+
+			
+			//NOTE: IN FINAL DEV --> REMOVE HARD CODING OF FILE LOCATION
+			File fXmlFile = new File("drivers.xml");
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(fXmlFile);
+
+			doc.getDocumentElement().normalize();
+
+			NodeList nList = doc.getElementsByTagName("driver");
+
+			System.out.println("----------------------------");
+			System.out.println("Reading Drivers from XML");
+
+			for (int index = 0; index < nList.getLength(); index++) {
+
+				//node list
+				Node nNode = nList.item(index);
+
+				DriverList.add(new Drivers());
+				
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+
+					Element eElement = (Element) nNode;
+
+					//fill out the deliveryTransactions obj
+					DriverList.get(index).setVehicleId(Integer.parseInt(eElement.getElementsByTagName("vehicle_id").item(0).getTextContent()));;
+					DriverList.get(index).setDriverType(eElement.getElementsByTagName("driver_type").item(0).getTextContent());;
+					DriverList.get(index).setLicense(eElement.getElementsByTagName("license").item(0).getTextContent());;
+					DriverList.get(index).setUserId(eElement.getElementsByTagName("user_id").item(0).getTextContent());;
+					DriverList.get(index).setName(eElement.getElementsByTagName("name").item(0).getTextContent());;
+					DriverList.get(index).setCurrentLoc(eElement.getElementsByTagName("current_loc").item(0).getTextContent());;
+
+				}
+			}
+			DriverArray = DriverList.toArray(new Drivers[DriverList.size()]);
+		    
+		} catch (Exception e) {
+			e.printStackTrace();
+		    }		
+	}	
+	
+	public Drivers[] getDriverArray() {
+		return DriverArray;
+	}
+
+	public void setDriverArray(Drivers[] DriverArray) {
+		this.DriverArray = DriverArray;
 	}		
 }

@@ -34,6 +34,9 @@ public class parseAndUpdate {
 		parse.parseVehiclesXML();
 		daoO.insertVehicles(parse.getVArray());
 		
+		parse.parseDriversXML();
+		daoO.insertDrivers(parse.getDriverArray());
+		
 		
 	}
 
