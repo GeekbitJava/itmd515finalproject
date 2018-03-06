@@ -1,3 +1,4 @@
+package groupproject.itmd515finalproject;
 /*
 Deborah Barndt
 	 Thomas Boller
@@ -6,12 +7,6 @@ Deborah Barndt
 	 Project Assignment 1
 	This is a class entity to hold Drivers
 */
-
-
-import java.sql.Date;
-import java.sql.Time;
-
-
 
 public class Drivers {
 
@@ -68,7 +63,7 @@ public class Drivers {
 		/**
 		 * @return the license
 		 */
-		public Date getLicense() {
+		public String getLicense() {
 			return license;
 		}
 		/**

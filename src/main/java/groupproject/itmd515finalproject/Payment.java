@@ -1,3 +1,5 @@
+package groupproject.itmd515finalproject;
+
 /*
 Deborah Barndt
 	 Thomas Boller
