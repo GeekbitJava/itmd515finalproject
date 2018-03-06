@@ -34,7 +34,7 @@ public class XmlParser {
 	private DeliveryTransactions [] dtArray;
 	private ArrayList<DeliveryTransactions> dtList = new ArrayList<DeliveryTransactions>();
 	
-	//Delivery Transactions
+	//Taxi Transactions
 	private TaxiTransactions [] taxArray;
 	private ArrayList<TaxiTransactions> taxList = new ArrayList<TaxiTransactions>();
 	
@@ -102,6 +102,61 @@ public class XmlParser {
 		this.dtArray = dtArray;
 	}
 
-	
-	
+	public void parseTTXML() {
+		
+		try {
+
+			
+			//NOTE: IN FINAL DEV --> REMOVE HARD CODING OF FILE LOCATION
+			File fXmlFile = new File("C:\\Users\\Tom\\Documents\\IIT\\ITMD415\\Assignments\\proj_Assign_1\\itmd515finalproject\\taxitrans.xml");
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(fXmlFile);
+
+			doc.getDocumentElement().normalize();
+
+			NodeList nList = doc.getElementsByTagName("transaction");
+
+			System.out.println("----------------------------");
+			System.out.println("Reading Taxi Transactions from XML");
+
+			for (int index = 0; index < nList.getLength(); index++) {
+
+				//node list
+				Node nNode = nList.item(index);
+
+				taxList.add(new TaxiTransactions());
+				
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+
+					Element eElement = (Element) nNode;
+
+					//fill out the deliveryTransactions obj
+					taxList.get(index).setTid(Integer.parseInt(eElement.getElementsByTagName("trans_id").item(0).getTextContent()));
+					taxList.get(index).setUserid(eElement.getElementsByTagName("user_id").item(0).getTextContent());
+					taxList.get(index).setDriverid(eElement.getElementsByTagName("driver_id").item(0).getTextContent());
+					taxList.get(index).setDateOfSale(java.sql.Date.valueOf(eElement.getElementsByTagName("date").item(0).getTextContent()));
+					taxList.get(index).setRate(Double.parseDouble(eElement.getElementsByTagName("rate").item(0).getTextContent()));
+					taxList.get(index).setPickupTime(java.sql.Time.valueOf(eElement.getElementsByTagName("pickup_time").item(0).getTextContent()));
+					taxList.get(index).setPickupLocation(eElement.getElementsByTagName("pickup_loc").item(0).getTextContent());
+					taxList.get(index).setDropoffTime(java.sql.Time.valueOf(eElement.getElementsByTagName("drop_time").item(0).getTextContent()));
+					taxList.get(index).setDropoffLocation(eElement.getElementsByTagName("drop_loc").item(0).getTextContent());
+					taxList.get(index).setRating(Byte.valueOf(eElement.getElementsByTagName("rating").item(0).getTextContent()));
+
+				}
+			}
+			taxArray = taxList.toArray(new TaxiTransactions[taxList.size()]);
+		    
+		} catch (Exception e) {
+			e.printStackTrace();
+		    }		
+	}
+
+	public TaxiTransactions[] gettTaxArray() {
+		return taxArray;
+	}
+
+	public void setTaxArray(TaxiTransactions[] taxArray) {
+		this.taxArray = taxArray;
+	}
 }

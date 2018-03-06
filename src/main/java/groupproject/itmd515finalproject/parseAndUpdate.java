@@ -16,14 +16,14 @@ public class parseAndUpdate {
 		// TODO Auto-generated method stub
 
 		XmlParser parse = new XmlParser();
-		
-		parse.parseDTXML();
-		
 		DAO daoO = new DAO();
 		
+		parse.parseDTXML();
 		daoO.createTables();
-
 		daoO.insertDtRecords(parse.getDtArray());
+		
+		parse.parseTTXML();
+		daoO.insertTaxRecords(parse.gettTaxArray());
 		
 		
 	}

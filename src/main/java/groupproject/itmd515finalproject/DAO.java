@@ -56,6 +56,22 @@ public class DAO {
 			stmnt.executeUpdate(dtTable);
 			System.out.println("Created dtTable in given database...");
 			
+			String taxTable = "CREATE TABLE IF NOT EXISTS TaxiTransactions "
+					+ "(tid int(10) NOT NULL, "
+					+ "	userid varchar(10), "
+					+ "	driverid varchar(11), "
+					+ "	dateofsale date, "
+					+ "	rate numeric(9,2), "
+					+ "	pickuptime time, "
+					+ "	pickuplocation varchar(255), "
+					+ "	dropofftime time, "
+					+ "	dropofflocation varchar(255), "
+					+ "	rating tinyint(1), "
+					+ "	PRIMARY KEY( tid ))";
+
+	stmnt.executeUpdate(taxTable);
+	System.out.println("Created taxTable in given database...");			
+			
 		} catch (SQLException se) {
 			
 			// Handle errors for JDBC
@@ -84,16 +100,14 @@ public class DAO {
 		
 		try{
 		  //Open connection to the PAPA server
-	      System.out.println("Connecting to PAPA server to insert");
+	      System.out.println("Connecting to test server to insert");
 	      dbcon = DriverManager.getConnection(URL, UID, PASSWD);
-	      System.out.println("Connection to PAPA server successful.");
+	      System.out.println("Connection to test server successful.");
 	      
 	      //create statment
 	      System.out.println("Inserting records into the table...");
 	      stmnt = dbcon.createStatement();
-	      
-	   
-	      System.out.println(dtList.length);
+
 	      //cycles through the delivery transactions objects and stores them
 	      for(int i=0;i<dtList.length;i++) {
 	    	  dtTbl = "INSERT INTO DeliveryTransactions(tid, userid, driverid, dateOfSale, rate, pickuptime, pickuplocation, dropofftime, dropofflocation, packagesize)" +
@@ -124,5 +138,49 @@ public class DAO {
 	}// end finally try
 		
 }	
-	
+
+	public void insertTaxRecords(TaxiTransactions[] taxList) {
+		
+		String taxTbl = null;
+		
+		try{
+		  //Open connection to the PAPA server
+	      System.out.println("Connecting to test server to insert");
+	      dbcon = DriverManager.getConnection(URL, UID, PASSWD);
+	      System.out.println("Connection to test server successful.");
+	      
+	      //create statment
+	      System.out.println("Inserting records into the table...");
+	      stmnt = dbcon.createStatement();
+	      
+	      //cycles through the taxi transactions objects and stores them
+	      for(int i=0;i<taxList.length;i++) {
+	    	  taxTbl = "INSERT INTO TaxiTransactions(tid, userid, driverid, dateOfSale, rate, pickuptime, pickuplocation, dropofftime, dropofflocation, rating)" +
+	      " VALUES('"+taxList[i].getTid()+"' , '"+taxList[i].getUserid()+"' , '"+taxList[i].getDriverid()+"' , '"+taxList[i].getDateOfSale()+
+	      "' , '"+taxList[i].getRate()+"' , '"+taxList[i].getPickupTime()+"' , '"+taxList[i].getPickupLocation()+"' , '"+taxList[i].getDropoffTime()+
+	      "' , '"+taxList[i].getDropoffLocation()+"' , '"+taxList[i].getRating()+"')";
+
+	      stmnt.executeUpdate(taxTbl); //run query to insert record by record
+	     
+	      }
+
+	      System.out.println("taxList added to DB");
+
+	   }catch(SQLException se){
+		   
+		// Handle errors for JDBC
+		se.printStackTrace();
+		
+	  }finally {
+		  
+		// finally block used to close resources
+		try {
+			
+			if (stmnt != null)
+				dbcon.close();
+			
+		} catch (SQLException se) {  } // catch does nothing
+	}// end finally try
+		
+	}
 }//end of class DAO
