@@ -25,6 +25,9 @@ public class parseAndUpdate {
 		parse.parseTTXML();
 		daoO.insertTaxRecords(parse.gettTaxArray());
 		
+		parse.parseUserXML();
+		daoO.insertUsers(parse.getUsrArray());
+		
 		
 	}
 

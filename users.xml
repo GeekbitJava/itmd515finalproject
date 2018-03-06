@@ -13,7 +13,6 @@
 	
 	<user>
 		<user_id>flcon</user_id>
-		<username>flcon13</username>
 		<password>harlem</password>
 		<first_name>Sam</first_name>
 		<last_name>Wilson</last_name>
@@ -25,7 +24,6 @@
 	
 	<user>
 		<user_id>daredvl</user_id>
-		<username>ddvl</username>
 		<password>hellskitchen</password>
 		<first_name>Matt</first_name>
 		<last_name>Murdock</last_name>
@@ -37,7 +35,6 @@
 	
 	<user>
 		<user_id>storm</user_id>
-		<username>xstorm</username>
 		<password>lightning</password>
 		<first_name>Ororo</first_name>
 		<last_name>Munroe</last_name>
@@ -49,7 +46,6 @@
 	
 	<user>
 		<user_id>beast</user_id>
-		<username>blubeast</username>
 		<password>doctor</password>
 		<first_name>Hank</first_name>
 		<last_name>McCoy</last_name>
@@ -61,7 +57,6 @@
 	
 	<user>
 		<user_id>blkcat</user_id>
-		<username>blkcat</username>
 		<password>spider</password>
 		<first_name>Felicia</first_name>
 		<last_name>Hardy</last_name>
