@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Bree-Serif);
 
 * {
   margin: 0;
@@ -13,7 +13,7 @@
 
 body {
   background: hsla(255, 255%, 255%, 1);
-  font: 100%/1 'Lobster', cursive;
+  font: 100%/1 'Bree Serif', serif;
 }
 
 .login {
