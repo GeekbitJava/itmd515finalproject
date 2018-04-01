@@ -64,6 +64,16 @@ ul {
   padding-bottom: 30px;
 }
 
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #5F2C7D;
+}
+
 .containmain {
   background-color:#ffffff;
   width:100%;
