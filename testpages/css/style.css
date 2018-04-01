@@ -1,5 +1,5 @@
 
-.toggle{
+.toggle {
   background-color:black;
   color:white;
   height:40px;
@@ -8,11 +8,9 @@
   font-family: tahoma;
   font-weight:bold;
   font-size:25px;
-  
- 
 }
 
-.close{
+.close {
   color:white;
   float:right;
   cursor:pointer;
@@ -23,27 +21,63 @@
   font-family: tahoma;
 }
 
-
-.contain{
+.contain {
   background-color:black;
-  height:50px;
-  
+  height:50px; 
 }
 
-.containmain{
+.main {
+  background-color: black;
+  color: white;
+  text-align: center;
+  height: 60px;
+  margin-top: 15px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.main h1 {
+  padding-top: 10px;
+}
+
+.icons {
+  float: left;
+  width: 25%;
+  padding-bottom: 15px;
+}
+
+.icons img {
+  width: 60px;
+  padding-bottom: 20px;
+}
+
+.services {
+  float: left;
+  width: 75%;
+  padding-bottom: 15px;
+}
+
+.services h2 {
+  padding-top: 8px;
+  padding-bottom: 30px;
+}
+
+.containmain {
   background-color:#ffffff;
   width:100%;
-  display:none;
-  
+  display:none; 
 }
-.center{
+
+.center {
   margin: 0 auto;
   width:400px;
   padding-top:1%;
   padding-bottom:100%;
 }
 
-.profile{
+.profile {
   margin-top:30px;
   margin-left:140px;
   width:200px;
@@ -77,19 +111,17 @@ input[type=submit] {
 
 }
 
-input[type=submit]:hover{
-  
-color:grey;
-
+input[type=submit]:hover{ 
+  color:grey;
 }
 
-.form{
+.form {
   width:250px;
   margin: 0 auto;
   margin-top:10px;
 }
 
-.topform{
+.topform {
   border-bottom:2px solid lightgrey;
   margin:0px;
   background-image: url('http://www.flaticon.com/png/256/16612.png');
@@ -99,7 +131,7 @@ color:grey;
   background-position: 50% 50%;
 }
 
-.bottomform{
+.bottomform {
   margin-top:0px;
   margin-bottom:20px;
   background-image: url('http://www.flaticon.com/png/256/25239.png');
