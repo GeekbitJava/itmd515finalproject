@@ -21,18 +21,20 @@ Written by Deborah Barndt & Thomas Boller. --%>
 </head>
 
 <body>
-  <div class="login">
-  <header class="header">
-    <span class="logo"><img src="/images/hitch.png"></span>
-    <span class="loader"></span>
-  </header>
-  <form class="form">  
-    <input class="input" type="text", placeholder="Username">
-    <input class="input" type="password" placeholder="Password">
-    <button class="btn" type="submit"></button>
+  <div class="contain">
+   <div id="close" class="close">Close</div>
+  </div>
+  <div class="containmain">
+  <div class="center">
+  <div class="profile"><img src="images/hitch.png">
+  </div>
+  <form class="form" action="demo_form.asp" autocomplete="on">
+  <input type="text" class="topform" placeholder="Username" name="username"><br>
+  <input type="password" class="bottomform" placeholder="Password" name="password"><br>
+  <input type="submit">
   </form>
-</div>
-<button class ="resetbtn" type= "reset">Reset it</button>
+  </div>
+  </div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script  src="js/index.js"></script>
 </body>
