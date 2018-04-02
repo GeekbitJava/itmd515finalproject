@@ -74,6 +74,11 @@ a:hover {
   color: #5F2C7D;
 }
 
+h3 {
+  width: 100%;
+  text-align: center;
+}
+
 .containmain {
   background-color:#ffffff;
   width:100%;

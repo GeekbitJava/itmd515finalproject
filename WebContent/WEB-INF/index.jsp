@@ -3,13 +3,12 @@ Deborah Barndt
 Thomas Boller
 3-29-18
 index.jsp
-Programming Assignment 2
-This program includes an html login form with an action to go to main.jsp file.
+Final Project
+This program includes a login page for the rideshare app.
 Written by Deborah Barndt & Thomas Boller. --%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,7 +30,7 @@ Written by Deborah Barndt & Thomas Boller. --%>
   <form class="form" action="demo_form.asp" autocomplete="on">
   <input type="text" class="topform" placeholder="Username" name="username"><br>
   <input type="password" class="bottomform" placeholder="Password" name="password"><br>
-  <input type="submit">
+  <input type="submit" onclick="main.jsp">
   </form>
   </div>
   </div>
