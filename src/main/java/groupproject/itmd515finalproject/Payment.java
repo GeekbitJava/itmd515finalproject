@@ -1,18 +1,21 @@
 package groupproject.itmd515finalproject;
 
 /*
-Deborah Barndt
+	 Deborah Barndt
 	 Thomas Boller
-	 2-23-18
+	 3-27-18
 	 Payment.java
-	 Project Assignment 1
+	 Project Assignment 3
 	This is a class entity to hold Payment information
 */
 
 
 import java.sql.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-public class Payment {
+@Entity
+public class Payment implements java.io.Serializable {
 
 	/* ---------------
 	 * | Constructors  |
@@ -28,6 +31,7 @@ public class Payment {
 	 * ---------------	
 	 */
 		
+		@Id
 		private int pid;
 		private String name_on_card;
 		private long card_number;

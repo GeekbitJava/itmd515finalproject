@@ -3,16 +3,19 @@ package groupproject.itmd515finalproject;
 /*
 Deborah Barndt
 	 Thomas Boller
-	 2-23-18
+	 3-27-18
 	 TaxiTransactions.java
-	 Project Assignment 1
+	 Project Assignment 3
 	This is a class entity to hold TaxiTransactions
 */
 
 import java.sql.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.sql.Time;
 
-public class TaxiTransactions {
+@Entity
+public class TaxiTransactions implements java.io.Serializable {
 	
 
 	/* ---------------
@@ -29,6 +32,7 @@ public class TaxiTransactions {
 	 * ---------------	
 	 */
 		
+		@Id
 		private int tid;
 		private String userid;
 		private String driverid;

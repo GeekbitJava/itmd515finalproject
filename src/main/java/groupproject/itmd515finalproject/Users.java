@@ -3,13 +3,17 @@ package groupproject.itmd515finalproject;
 /*
 Deborah Barndt
 	 Thomas Boller
-	 2-23-18
+	 3-27-18
 	 Users.java
-	 Project Assignment 1
+	 Project Assignment 3
 	This is a class entity to hold Users
 */
 
-public class Users {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Users implements java.io.Serializable {
 
 
 	/* ---------------
@@ -26,6 +30,7 @@ public class Users {
 	 * ---------------	
 	 */
 
+		@Id
 		private String userid;
 		private String password;
 		private String firstName;

@@ -2,13 +2,18 @@ package groupproject.itmd515finalproject;
 /*
 Deborah Barndt
 	 Thomas Boller
-	 2-23-18
+	 3-27-18
 	 Drivers.java
-	 Project Assignment 1
+	 Project Assignment 3
 	This is a class entity to hold Drivers
 */
 
-public class Drivers {
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Drivers implements java.io.Serializable {
 
 	/* ---------------
 	 * | Constructors  |
@@ -24,6 +29,7 @@ public class Drivers {
 	 * ---------------	
 	 */
 		
+		@Id
 		private int vehicle_id;
 		private String driver_type;
 		private String license;

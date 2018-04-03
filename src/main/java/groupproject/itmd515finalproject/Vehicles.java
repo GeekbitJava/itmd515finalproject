@@ -4,13 +4,17 @@ package groupproject.itmd515finalproject;
 
 Deborah Barndt
 	 Thomas Boller
-	 2-23-18
+	 3-27-18
 	 Vehicles.java
-	 Project Assignment 1
+	 Project Assignment 3
 	This is a class entity to hold Vehicles
 */
 
-public class Vehicles {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Vehicles implements java.io.Serializable {
 
 	/* ---------------
 	 * | Constructors  |
@@ -26,6 +30,7 @@ public class Vehicles {
 	 * ---------------	
 	 */
 		
+		@Id
 		private int vehicle_id;
 		private String make;
 		private String model;

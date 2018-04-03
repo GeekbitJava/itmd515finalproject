@@ -28,7 +28,7 @@ Written by Deborah Barndt & Thomas Boller. --%>
   <div class="profile"><img src="images/hitch.png">
   </div>
   <form class="form" action="demo_form.asp" autocomplete="on">
-  <input type="text" class="topform" placeholder="Username" name="username"><br>
+  <input type="text" class="topform" placeholder="Email" name="username"><br>
   <input type="password" class="bottomform" placeholder="Password" name="password"><br>
   <input type="submit" onclick="main.jsp">
   </form>

@@ -1,5 +1,8 @@
 package groupproject.itmd515finalproject;
 
+import org.hibernate.Session;
+
+import groupproject.itmd515finalproject.*;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -35,4 +38,28 @@ public class AppTest
     {
         assertTrue( true );
     }
+  
+    /**
+     * Hibernate test
+     */
+    public void testHib()
+    {
+        Session session = HibernateUtils.getSessionFactory().openSession();
+		 
+        session.beginTransaction();
+        Users user = new Users();
+ 
+        user.setUserid("001");
+        user.setEmail("tboller@gmail.com");
+        user.setFirstName("Tom");
+        user.setLastName("Boller");
+        user.setPassword("test");
+        user.setUserType("admin");
+
+ 
+        session.save(user);
+        session.getTransaction().commit();	
 }
+    }
+    
+
