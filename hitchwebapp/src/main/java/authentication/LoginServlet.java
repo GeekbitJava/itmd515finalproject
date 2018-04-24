@@ -35,10 +35,17 @@ public class LoginServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 
+		System.out.println("Before validateuser ran");
+		
+		
 		boolean isValidUser = service.validateUser(username, password);
+		
+		System.out.println(isValidUser);
 
 		if (isValidUser) {
+			System.out.println("VALID");
 			request.setAttribute("username", username);
+
 			request.getRequestDispatcher("/main.jsp").forward(request, response);
 		} else {
 			request.setAttribute("errorMessage", "Invalid Credentials!!");

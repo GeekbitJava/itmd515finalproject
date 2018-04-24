@@ -3,10 +3,9 @@ package geekbitjava.test;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-import sql.DAO;
-
+import geekbitjava.database.DAO;
 import geekbitjava.entities.*;
-import xml.XmlParser;
+
 
 /*
 Deborah Barndt
@@ -40,30 +39,13 @@ public class TestJdbc {
 		
 		DAO daoO = new DAO();
 		daoO.createTables();
-		XmlParser parse = new XmlParser();
-		parse.parseDTXML();
+
+
 		
 		System.out.println("Creating delivery object...");
 		DeliveryTransactions tempdel = new DeliveryTransactions(1, 2,
 				"pub street", "main street");
-		
-		//daoO.insertSingleDtRecord(tempdel);
-		daoO.insertMassDtRecords(parse.getDtArray());
-		
-		parse.parseTTXML();
-		daoO.insertMassTaxRecords(parse.gettTaxArray());
-		
-		parse.parseUserXML();
-		daoO.insertMassUsers(parse.getUsrArray());
-		
-		parse.parsePaymentXML();
-		daoO.insertMassPayment(parse.getPayArray());
-		
-		parse.parseVehiclesXML();
-		daoO.insertMassVehicles(parse.getVArray());
-		
-		parse.parseDriversXML();
-		daoO.insertMassDrivers(parse.getDriverArray());
+
 
 	}
 

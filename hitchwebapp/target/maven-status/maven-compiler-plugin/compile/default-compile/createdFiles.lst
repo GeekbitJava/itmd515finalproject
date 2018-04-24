@@ -1,10 +1,14 @@
+geekbitjava\database\DAO.class
+geekbitjava\entities\Users.class
+geekbitjava\entities\Payment.class
+geekbitjava\entities\Vehicles.class
+geekbitjava\test\TestHQL.class
 geekbitjava\entities\Drivers.class
 geekbitjava\entities\UserBean.class
 geekbitjava\test\TestHibernate.class
 geekbitjava\entities\DeliveryTransactions.class
+geekbitjava\entities\TaxiTransactions.class
 authentication\LoginServlet.class
-geekbitjava\entities\Users.class
 geekbitjava\test\TestJdbc.class
 geekbitjava\hitch\App.class
-sql\DAO.class
 authentication\LoginService.class

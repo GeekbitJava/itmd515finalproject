@@ -17,8 +17,8 @@
   <div class="center">
   <div class="profile"><img src="images/hitch.png">
   </div>
-  <form class="form" action="/hitchwebapp/login.do" method="POST" autocomplete="on">
-  <input type="text" class="topform" placeholder="Username" name="username"><br>
+  <form class="form" action="/hitchwebapp/login.do" method="POST">
+  <input type="text" class="topform" placeholder="E-Mail" name="username"><br>
   <input type="password" class="bottomform" placeholder="Password" name="password"><br>
   <input type="submit">
   </form>
