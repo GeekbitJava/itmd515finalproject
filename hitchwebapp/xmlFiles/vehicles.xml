@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="vehicles.xsl" ?>
+
+<!-- Deborah Barndt
+ 	 Thomas Boller
+ 	 2-23-18
+ 	 vehicles.xml
+ 	 Programming Assignment 2
+ 	 This xml file holds the vehicle information for the car services.
+ 	 Written by Deborah Barndt & Thomas Boller. -->
+
+<vehicles>
+	
+	<vehicle>
+		<vehicle_id>1101</vehicle_id>
+		<uid>14</uid>
+		<make>Honda</make>
+		<model>Fit</model>
+		<year>2015</year>
+		<license_plate>ANTMAN</license_plate>
+		<color>red</color>
+	</vehicle>
+
+	<vehicle>
+		<vehicle_id>1102</vehicle_id>
+		<uid>24</uid>
+		<make>Acura</make>
+		<model>cl</model>
+		<year>1997</year>
+		<license_plate>t434ggd23</license_plate>
+		<color>black</color>
+	</vehicle>
+	
+		<vehicle>
+		<vehicle_id>1103</vehicle_id>
+		<uid>34</uid>
+		<make>Pontiac</make>
+		<model>Firebird</model>
+		<year>1988</year>
+		<license_plate>3452345gfd</license_plate>
+		<color>red</color>
+	</vehicle>
+	
+</vehicles>
