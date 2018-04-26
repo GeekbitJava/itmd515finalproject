@@ -277,3 +277,30 @@ body {
   border: 2px solid #8F56AF;
   border-radius: 4px;
 }
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+}
+
+.userpic {
+  width: 50%;
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+.userid {
+    color: grey;
+    font-size: 18px;
+}
+
+.email {
+    color: grey;
+    font-size: 18px;
+}
