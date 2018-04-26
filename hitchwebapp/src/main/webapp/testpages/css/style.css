@@ -1,4 +1,3 @@
-
 .toggle {
   background-color:black;
   color:white;
@@ -54,9 +53,11 @@ ul {
 }
 
 .services {
-  float: left;
-  width: 75%;
-  padding-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+  padding-bottom: 10px;
 }
 
 .services h2 {
@@ -154,4 +155,125 @@ input[type=submit]:hover{
   background-color:white;
   background-size: 11%;
   background-position: 50% 50%;
+}
+
+.register {
+  margin-left: 80px;
+  text-align: center;
+}
+
+body {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.myheader {
+  font-family: 'Khand', sans-serif;
+  font-size: 50px;
+  text-align: center;
+  padding: 3px;
+}
+
+#logo {
+  display: block;
+  width: 13%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#navmenu {
+  background-color: #E0EBEE;
+  position: relative;
+  width: 100%;
+  top: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#navmenu ul {
+  list-style-type: none;
+  margin-left: 30%;
+  margin-right: 50%;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+#navmenu ul li {
+  float: left;
+  text-align: center;
+  display: inline;
+}
+
+#navmenu ul li a {
+  display: block;
+  padding: 15px;
+  font-size: 30px;
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Khand', sans-serif;
+}
+
+#navmenu ul li a:hover {
+  background-color: #8F56AF;
+  color: #000000;
+}
+
+#intro {
+  text-align: center;
+  margin-left: 10px;
+}
+
+.about {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.delivery input[type=text] {
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: #8F56AF;
+  color: white;
+  border-radius: 4px;
+}
+
+.delivery input[type=time] {
+  width: 10%;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: #8F56AF;
+  color: white;
+  border-radius: 4px;
+}
+
+.delivery label {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.request {
+  text-align: center;
+  font-family: 'Khand', sans-serif;
+  font-size: 38px;
+}
+
+#custprofile input[type=text] {
+  box-sizing: border-box;
+  padding: 5px;
+  border: 2px solid #8F56AF;
+  border-radius: 4px;
+}
+
+#custprofile input[type=email] {
+  box-sizing: border-box;
+  padding: 5px;
+  border: 2px solid #8F56AF;
+  border-radius: 4px;
 }
