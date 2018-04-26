@@ -303,7 +303,7 @@ body {
 }
 
 .ride input[type=time] {
-  width: 10%;
+  width: 15%;
   padding: 5px;
   box-sizing: border-box;
   background-color: #8F56AF;
