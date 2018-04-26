@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Hitch: Request a Ride</title>
+<title>Hitch: Request a Delivery</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
 <link href="https://fonts.googleapis.com/css?family=Khand" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -10,22 +12,22 @@
 </head>
 
 <body>
-  <header>
+ <header>
     <img src="images/hitch.png" id="logo">
     <h1 class="myheader">HITCH</h1>
       
     <nav id="navmenu">
       <ul>
-        <li id="nav-home"><a href="main.html">Home</a></li>
-        <li id="nav-ride"><a href="ride.html">Ride</a></li>
-        <li id="nav-profile"><a href="profile.html">Profile</a></li>
-        <li id="nav-delivery"><a href="delivery.html">Delivery</a></li>
+        <li id="nav-home"><a href="main.jsp">Home</a></li>
+        <li id="nav-ride"><a href="ride.jsp">Ride</a></li>
+        <li id="nav-profile"><a href="profile.jsp">Profile</a></li>
+        <li id="nav-delivery"><a href="delivery.jsp">Delivery</a></li>
       </ul>
     </nav>
   </header>
-  <img class="services" src="images/car.png">
-  <h1 class="request">Request a Ride</h1>
-    <form class="ride" action="/action_page.php" target="_blank" method="POST" enctype="multipart/form-data">
+  <img class="services" src="images/delivery.png">
+  <h1 class="request">Request a Delivery</h1>
+    <form class="delivery" action="/action_page.php" target="_blank" method="POST" enctype="multipart/form-data">
       <p>
         <label>PICK UP ADDRESS:</label>
         <input type="text" name="pickup">
@@ -35,8 +37,18 @@
         <input type="text" name="dropoff">
       </p>
       <p>
+        <label>PACKAGE SIZE:</label>
+            <select name="pkgsize">
+              <option value="xsmall">EXTRA SMALL</option>
+              <option value="small">SMALL</option>
+              <option value="medium">MEDIUM</option>
+              <option value="large">LARGE</option>
+              <option value="xlarge">EXTRA LARGE</option>
+            </select>
+      </p>
+      <p>
         <label>WHEN:</label>
-            <select name="when>
+            <select name="when">
               <option value="asap">ASAP</option>
               <option value="later">LATER</option>
             </select>
@@ -45,16 +57,7 @@
         <label>TIME:</label>
         <input type="time" name="usertime">
       </p>
-      <p>
-        <label>NUMBER OF PASSENGERS:</label>
-            <select name="pkgsize">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-      </p>
-      <input type="submit" value="Submit" onclick="main.html">
+      <input type="submit" value="Submit" onclick="main.jsp">
     </form>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script  src="js/index.js"></script>

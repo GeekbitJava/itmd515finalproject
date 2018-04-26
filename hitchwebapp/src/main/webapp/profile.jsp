@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Welcome to Hitch</title>
+<title>Hitch: Profile</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
 <link href="https://fonts.googleapis.com/css?family=Khand" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -13,8 +13,9 @@
 
 <body>
   <header>
+    <img src="images/hitch.png" id="logo">
     <h1 class="myheader">HITCH</h1>
-    <img src="images/hitch.png" id="logo">  
+      
     <nav id="navmenu">
       <ul>
         <li id="nav-home"><a href="main.jsp">Home</a></li>
@@ -24,9 +25,22 @@
       </ul>
     </nav>
   </header>
-  <h4 id="intro">Welcome to Hitch!</h4>
-  <p class="about">Hitch is a taxi and delivery service located on the Southside of Chicago near Illinois Tech.</p>
-  <img class="homepic" src="images/southside.jpg" alt="Green Line on the Southside of Chicago">
+  <img class="services" src="images/profile.png">
+  <h1 class="request">Profile</h1>
+  
+  <div class="card">
+  <img class="userpic" src="images/jpapa.jpg" alt="jpapa">
+  <h1>James Papademas</h1>
+  <p class="title">Professor</p>
+  <p class="customer" id="userid">Username: jpapa</p>
+  <p class="customer" id="email">Email: jpapadem@iit.edu</p>
+  <p class="customer" id="phone">Phone: 855-888-5547</p>
+  <p>Location: Chicago</p>
+  <a href="#"><i class="fa fa-dribbble"></i></a> 
+  <a href="#"><i class="fa fa-twitter"></i></a> 
+  <a href="#"><i class="fa fa-linkedin"></i></a> 
+  <a href="#"><i class="fa fa-facebook"></i></a> 
+  
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script  src="js/index.js"></script>
 </body>

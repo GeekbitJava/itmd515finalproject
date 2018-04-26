@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Welcome to Hitch</title>
+<title>Hitch: Request a Ride</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
 <link href="https://fonts.googleapis.com/css?family=Khand" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -13,8 +13,9 @@
 
 <body>
   <header>
+    <img src="images/hitch.png" id="logo">
     <h1 class="myheader">HITCH</h1>
-    <img src="images/hitch.png" id="logo">  
+      
     <nav id="navmenu">
       <ul>
         <li id="nav-home"><a href="main.jsp">Home</a></li>
@@ -24,9 +25,39 @@
       </ul>
     </nav>
   </header>
-  <h4 id="intro">Welcome to Hitch!</h4>
-  <p class="about">Hitch is a taxi and delivery service located on the Southside of Chicago near Illinois Tech.</p>
-  <img class="homepic" src="images/southside.jpg" alt="Green Line on the Southside of Chicago">
+  <img class="services" src="images/car.png">
+  <h1 class="request">Request a Ride</h1>
+    <form class="ride" action="/action_page.php" target="_blank" method="POST" enctype="multipart/form-data">
+      <p>
+        <label>PICK UP ADDRESS:</label>
+        <input type="text" name="pickup">
+      </p>
+      <p>
+        <label>DROP OFF ADDRESS:</label>
+        <input type="text" name="dropoff">
+      </p>
+      <p>
+        <label>WHEN:</label>
+            <select name="when">
+              <option value="asap">ASAP</option>
+              <option value="later">LATER</option>
+            </select>
+      </p>
+      <p>
+        <label>TIME:</label>
+        <input type="time" name="usertime">
+      </p>
+      <p>
+        <label>NUMBER OF PASSENGERS:</label>
+            <select name="pkgsize">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+      </p>
+      <input type="submit" value="Submit" onclick="main.jsp">
+    </form>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script  src="js/index.js"></script>
 </body>
