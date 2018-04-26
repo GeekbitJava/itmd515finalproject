@@ -21,6 +21,8 @@
   <input type="text" class="topform" placeholder="E-Mail" name="username"><br>
   <input type="password" class="bottomform" placeholder="Password" name="password"><br>
   <input type="submit">
+  <p></p>
+  <a href="register.jsp" class="register"><strong>Register with Hitch!</strong></a>
   </form>
   </div>
   </div>

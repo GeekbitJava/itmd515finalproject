@@ -48,7 +48,7 @@
     <input type="text" id="exp_date" name="exp_date" placeholder="Expiration Date" required />
     </p>
     <p>
-    <input type="text" id="ccv" id="ccv" name="ccv" size="4" placeholder="CCV" required />
+    <input type="text" id="ccv" id="ccv" name="ccv" size="4" placeholder="CCV"  maxlength="4" required />
     </p>
     <p>
 		<input type="submit" id="submit" value="Submit" onclick="validate();" />

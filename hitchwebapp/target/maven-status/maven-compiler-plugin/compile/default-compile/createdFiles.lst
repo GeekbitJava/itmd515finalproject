@@ -1,3 +1,4 @@
+authentication\RegistrationService.class
 geekbitjava\database\DAO.class
 geekbitjava\entities\Users.class
 geekbitjava\entities\Payment.class
@@ -8,7 +9,9 @@ geekbitjava\entities\UserBean.class
 geekbitjava\test\TestHibernate.class
 geekbitjava\entities\DeliveryTransactions.class
 geekbitjava\entities\TaxiTransactions.class
+geekbitjava\xml\XmlParser.class
 authentication\LoginServlet.class
 geekbitjava\test\TestJdbc.class
 geekbitjava\hitch\App.class
 authentication\LoginService.class
+authentication\RegistrationServlet.class

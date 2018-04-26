@@ -1,13 +1,19 @@
 package authentication;
 
+/*
+Deborah Barndt
+ Thomas Boller
+ 4-22-18
+ RegistrationServelet.java
+ Final Project
+This class validates the users vs the database
+*/
+
 import geekbitjava.database.DAO;
 import geekbitjava.entities.Users;
 
 public class LoginService {
 	public boolean validateUserTest(String user, String password) {
-		
-		//create new dao obj
-	//	DAO daoO = new DAO();
 		
 		//test data
 		String testEmail = "xstorm@email.com";
