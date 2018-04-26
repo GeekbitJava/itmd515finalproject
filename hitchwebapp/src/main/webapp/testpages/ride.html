@@ -25,7 +25,7 @@
   </header>
   <img class="services" src="images/car.png">
   <h1 class="request">Request a Ride</h1>
-    <form class="delivery" action="/action_page.php" target="_blank" method="POST" enctype="multipart/form-data">
+    <form class="ride" action="/action_page.php" target="_blank" method="POST" enctype="multipart/form-data">
       <p>
         <label>PICK UP ADDRESS:</label>
         <input type="text" name="pickup">
@@ -44,6 +44,15 @@
       <p>
         <label>TIME:</label>
         <input type="time" name="usertime">
+      </p>
+      <p>
+        <label>NUMBER OF PASSENGERS:</label>
+            <select name="pkgsize">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
       </p>
       <input type="submit" value="Submit" onclick="main.html">
     </form>
