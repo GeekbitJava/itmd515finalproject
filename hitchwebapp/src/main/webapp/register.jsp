@@ -27,22 +27,19 @@
   <img class="services" src="images/profile.png">
   <h1 class="request">Register</h1>
   <h3>Please fill out your customer profile.</h3>
-  <form id="custprofile" name="custprofile" action="custprofile.jsp" method="POST" autocomplete="on" oninput="output.value">
+  <form id="custprofile" name="custprofile" action="/hitchwebapp/registration.do" method="POST" autocomplete="on" oninput="output.value">
     <input type="text" id="fname" name="fname" placeholder="First Name" required />
     <p>
     <input type="text" id="lname" name="lname" placeholder="Last Name" required />
     </p>
     <p>
-    <input type="text" id="userid" name="userid" placeholder="User ID" required />
+    <input type="email" id="email" name="email" placeholder="example@email.com" required />
     </p>
     <p>
     <input type="password" id="password" name="password" placeholder="Password" required />
     </p>
     <p>
-    <input type="email" id="email" name="email" placeholder="example@email.com" required />
-    </p>
-    <p>
-    <input type="text" id="name_on_card" name="name_on_card" placeholder="Name On Card" required />
+    <input type="text" id="name_on_card" name="name_on_card" placeholder="Name on Credit Card" required />
     </p>
     <p>
     <input type="text" id="credit" name="credit" placeholder="Credit Card Number" required />
@@ -51,7 +48,7 @@
     <input type="text" id="exp_date" name="exp_date" placeholder="Expiration Date" required />
     </p>
     <p>
-    <input id="ccv" id="ccv" name"ccv" size="4" placeholder="CCV" required />
+    <input type="text" id="ccv" id="ccv" name="ccv" size="4" placeholder="CCV" required />
     </p>
     <p>
 		<input type="submit" id="submit" value="Submit" onclick="validate();" />
