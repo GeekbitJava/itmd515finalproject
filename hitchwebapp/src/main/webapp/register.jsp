@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -17,10 +18,10 @@
       
     <nav id="navmenu">
       <ul>
-        <li id="nav-home"><a href="main.html">Home</a></li>
-        <li id="nav-ride"><a href="ride.html">Ride</a></li>
-        <li id="nav-profile"><a href="profile.html">Profile</a></li>
-        <li id="nav-delivery"><a href="delivery.html">Delivery</a></li>
+        <li id="nav-home"><a href="main.jsp">Home</a></li>
+        <li id="nav-ride"><a href="ride.jsp">Ride</a></li>
+        <li id="nav-profile"><a href="profile.jsp">Profile</a></li>
+        <li id="nav-delivery"><a href="delivery.jsp">Delivery</a></li>
       </ul>
     </nav>
   </header>
@@ -48,7 +49,7 @@
     <input type="text" id="exp_date" name="exp_date" placeholder="Expiration Date" required />
     </p>
     <p>
-    <input type="text" id="ccv" id="ccv" name="ccv" size="4" placeholder="CCV"  maxlength="4" required />
+    <input type="text" id="cvv" id="cvv" name="cvv" size="4" placeholder="CVV"  maxlength="4" required />
     </p>
     <p>
 		<input type="submit" id="submit" value="Submit" onclick="validate();" />
