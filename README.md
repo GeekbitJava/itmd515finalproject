@@ -1,10 +1,10 @@
 # itmd515finalproject
 
 # Deborah Barndt & Thomas Boller: Group 4
-ITMD 415/515 Advanced Software Programming
-Dr. Carl R. Carlson & Professor James Papademas
-Final Project: Car Services App
-4-24-18
+*ITMD 415/515 Advanced Software Programming
+*Dr. Carl R. Carlson & Professor James Papademas
+*Final Project: Car Services App
+*4-24-18
 
 # Instructions to run HITCH
 
@@ -17,7 +17,8 @@ HITCH is our car services app that allows you to register, login, look at your p
 4.	Go into geekbitjava.test and open the TestJdbc.java file. Enter your credentials on lines 27-29.
 5.	Open hibernate.cfg.xml under src/main/resources
 6.	Alter lines 11-13 to fit your credentials
-7.	Right click on TestJdbc.java and run as java application. Tables should be created and populated (tested 6 times, worked 5).
+7.	Right click on TestJdbc.java and run as java application. Tables should be created and populated 
+(tested 6 times, worked 5).
 8.	Add the project to Tomcat server
 9.	Start the Tomcat server
 10.	Open your browser and go to http://localhost:8080/hitchwebapp or http://localhost:8080 
