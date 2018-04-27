@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 
 import geekbitjava.database.DAO;
 import geekbitjava.entities.*;
+import geekbitjava.xml.*;
 
 
 /*
@@ -26,6 +27,10 @@ public class TestJdbc {
 		String jdbcUrl = "jdbc:mysql://localhost:3306/test";
 		String userName = "root";
 		String password = "QW!@12odin";
+		
+		//String jdbcUrl = "jdbc:mysql://www.papademas.net/ps?useSSL=false";
+	//	String userName = "ps";
+	//	String password = "ps1";
 
 		try {
 			System.out.println("Connecting to database: " + jdbcUrl);
@@ -40,12 +45,27 @@ public class TestJdbc {
 		DAO daoO = new DAO();
 		daoO.createTables();
 
+		XmlParser parse = new XmlParser();
 
 		
-		System.out.println("Creating delivery object...");
-		DeliveryTransactions tempdel = new DeliveryTransactions(1, 2,
-				"pub street", "main street");
-
+		parse.parseDTXML();
+		daoO.createTables();
+		daoO.insertMassDtRecords(parse.getDtArray());
+		
+		parse.parseTTXML();
+		daoO.insertMassTaxRecords(parse.gettTaxArray());
+		
+		parse.parseUserXML();
+		daoO.insertMassUsers(parse.getUsrArray());
+		
+		parse.parsePaymentXML();
+		daoO.insertMassPayment(parse.getPayArray());
+		
+		parse.parseVehiclesXML();
+		daoO.insertMassVehicles(parse.getVArray());
+		
+		parse.parseDriversXML();
+		daoO.insertMassDrivers(parse.getDriverArray());
 
 	}
 

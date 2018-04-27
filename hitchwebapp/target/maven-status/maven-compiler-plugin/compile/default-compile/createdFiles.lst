@@ -1,4 +1,5 @@
 authentication\RegistrationService.class
+geekbitjava\test\TestConnection.class
 geekbitjava\taxi\taxiService.class
 geekbitjava\database\DAO.class
 geekbitjava\taxi\TaxiServlet.class

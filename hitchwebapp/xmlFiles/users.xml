@@ -66,5 +66,15 @@
 		<current_loc>Chicago</current_loc>
 	</user>
 	
+	<user>
+		<user_id>3234</user_id>
+		<password>javaking</password>
+		<first_name>James</first_name>
+		<last_name>Papademas</last_name>
+		<user_type>admin</user_type>
+		<rating>5</rating>
+		<email>jpapa@email.com</email>
+		<current_loc>Chicago</current_loc>
+	</user>	
 
 </users>
