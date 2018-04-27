@@ -252,6 +252,10 @@ body {
   text-align: center;
 }
 
+.location {
+  font-weight: bold;
+}
+
 .delivery {
   width: 40%;
   margin-left: auto;
@@ -326,6 +330,39 @@ body {
   text-align: center;
   font-family: 'Khand', sans-serif;
   font-size: 38px;
+}
+
+.driver {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.driver input[type=text] {
+  box-sizing: border-box;
+  padding: 5px;
+  border: 2px solid #8F56AF;
+  border-radius: 4px;
+}
+
+.driver select {
+  box-sizing: border-box;
+  padding: 5px;
+  border: 2px solid #8F56AF;
+  border-radius: 4px;
+}
+
+.getrequests {
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.getrequests textarea {
+  box-sizing: border-box;
+  padding: 5px;
+  border: 2px solid #8F56AF;
+  border-radius: 4px;
 }
 
 #custprofile {

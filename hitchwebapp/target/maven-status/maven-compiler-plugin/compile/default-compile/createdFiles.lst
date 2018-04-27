@@ -1,5 +1,6 @@
 authentication\RegistrationService.class
 geekbitjava\database\DAO.class
+geekbitjava\google\deliveryService.class
 geekbitjava\entities\Users.class
 geekbitjava\entities\Payment.class
 geekbitjava\entities\Vehicles.class
