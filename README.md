@@ -1,16 +1,16 @@
 # itmd515finalproject
 
 # Deborah Barndt & Thomas Boller: Group 4
-*ITMD 415/515 Advanced Software Programming
-*Dr. Carl R. Carlson & Professor James Papademas
-*Final Project: Car Services App
-*4-24-18
+* ITMD 415/515 Advanced Software Programming
+* Dr. Carl R. Carlson & Professor James Papademas
+* Final Project: Car Services App
+* 4-24-18
 
 # Instructions to run HITCH
 
 HITCH is our car services app that allows you to register, login, look at your profile, request a ride, request a delivery, allows drivers to set their location and get customer requests, and an admin to manage the accounts.
 
-# How to run HITCH:
+## How to run HITCH:
 1.	Import the file to Eclipse Oxygen as a project
 2.	Run Maven Clean Verify
 3.	Create local MySQL Server and get credentials
@@ -24,6 +24,6 @@ HITCH is our car services app that allows you to register, login, look at your p
 10.	Open your browser and go to http://localhost:8080/hitchwebapp or http://localhost:8080 
 11.	Login to Hitch using the email “xstorm@email.com” and password “lightning” or register for your own account.
 
-# Future Additions to HITCH:
+## Future Additions to HITCH:
 1.	Adding Google API to ride requests and delivery requests
 2.	Adding an admin dashboard panel
