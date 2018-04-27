@@ -1,5 +1,15 @@
 package geekbitjava.xml;
 
+/*
+Deborah Barndt
+ Thomas Boller
+ 4-22-18
+ XmlParser.java
+ Final Project
+This class will parse our xml files for use by the dao.  This allows our program to make good populated data for testing, and 
+in future it would allow our admin users to make backups of data that can be easily sent to a new database.
+*/
+
 import java.io.File;
 import java.util.ArrayList;
 

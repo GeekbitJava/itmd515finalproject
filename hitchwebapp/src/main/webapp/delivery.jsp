@@ -21,13 +21,13 @@
         <li id="nav-home"><a href="main.jsp">Home</a></li>
         <li id="nav-ride"><a href="ride.jsp">Ride</a></li>
         <li id="nav-profile"><a href="profile.jsp">Profile</a></li>
-        <li id="nav-delivery"><a href="delivery.jsp">Delivery</a></li>
+        <li id="nav-delivery"><a href="/hitchwebapp/deliver.do">Delivery</a></li>
       </ul>
     </nav>
   </header>
   <img class="services" src="images/delivery.png">
   <h1 class="request">Request a Delivery</h1>
-    <form class="delivery" action="/action_page.php" target="_blank" method="POST" enctype="multipart/form-data">
+    <form class="delivery" action="/hitchwebapp/deliver.do" target="_blank" method="POST" enctype="multipart/form-data">
       <h3 class="location">PICK-UP LOCATION:</h3>
       <p>
         <label>Street Address:</label>

@@ -1,5 +1,12 @@
 package geekbitjava.taxi;
 
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /*
 Deborah Barndt
@@ -12,6 +19,22 @@ with the TaxiService, BillingService, and other files to forward the users reque
 be picking them up and when, as well as the cost
 */
 
-public class TaxiServlet {
+
+@WebServlet(urlPatterns = "/taxi.do")
+public class TaxiServlet extends HttpServlet {
+
+
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
+		request.getRequestDispatcher("/ride.jsp").forward(request, response);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
+
+	}
 
 }

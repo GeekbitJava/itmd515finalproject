@@ -1,6 +1,7 @@
 authentication\RegistrationService.class
+geekbitjava\taxi\taxiService.class
 geekbitjava\database\DAO.class
-geekbitjava\google\deliveryService.class
+geekbitjava\taxi\TaxiServlet.class
 geekbitjava\entities\Users.class
 geekbitjava\entities\Payment.class
 geekbitjava\entities\Vehicles.class
@@ -12,6 +13,9 @@ geekbitjava\entities\DeliveryTransactions.class
 geekbitjava\entities\TaxiTransactions.class
 geekbitjava\xml\XmlParser.class
 authentication\LoginServlet.class
+geekbitjava\billing\BillingService.class
+geekbitjava\delivery\DeliveryServlet.class
+geekbitjava\delivery\deliveryService.class
 geekbitjava\test\TestJdbc.class
 geekbitjava\hitch\App.class
 authentication\LoginService.class

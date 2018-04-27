@@ -21,7 +21,7 @@
         <li id="nav-home"><a href="main.jsp">Home</a></li>
         <li id="nav-ride"><a href="ride.jsp">Ride</a></li>
         <li id="nav-profile"><a href="profile.jsp">Profile</a></li>
-        <li id="nav-delivery"><a href="delivery.jsp">Delivery</a></li>
+        <li id="nav-delivery"><a href="/hitchwebapp/deliver.do">Delivery</a></li>
         <li id="nav-driver"><a href="driver.jsp">Driver</a></li>
         <li id="nav-driver"><a href="admin.jsp">Admin</a></li>
       </ul>
